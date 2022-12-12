@@ -1,4 +1,5 @@
 <html>
+
 <head>
   <style>
     body {
@@ -44,19 +45,21 @@
     ]
   );
 
+  // Transform array of arrays into a string of consecutive integers for the points attribute
   const polygonFormat = vertices => {
     let string = ''
     vertices.map(a => a.map(b => string += ` ${b}`))
     return string
   }
 
-  // Get the SVG element with the ID "mySvg"
+  // Get the SVG element with the tag "polygon"
   let polygon = document.getElementsByTagName("polygon");
-  console.log(polygon[0].attributes.points)
-  // Get the "polygon" attribute of the SVG element
+  
+  // Get the "points" attribute of the "polygon" element
   let polygonAttr = polygon[0].attributes.points;
 
-  // Set the value of the "polygon" attribute
+  // Set the value of the "points" attribute
   polygonAttr.value = polygonFormat(vertices);
 </script>
+
 </html>
